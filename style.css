@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+ --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+ --Light-Grayish-Blue: hsl(234, 14%, 74%);
+ --GrayishBlue: hsl(233, 13%, 49%);
+ --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+ --Linear-Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+ --color-switch-left: hsl(235, 58%, 82%);
+ --color-switch-right: hsl(237, 63%, 64%);
+}
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  background: var(--Very-Light-Grayish-Blue);
+    font-weight: 700;
+    
+}
+layaout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    height: 100vh;
+    position: relative;
+}
+.container-img-fondo2{
+  display: flex;
+  img{
+    
+    width: 500px;
+    height: 750px;
+  }
+}
+.container-img-fondo1{
+  display: flex;
+  img{
+    
+    width: 400px;
+    height: 300px;
+  }
+}
+
+.container-img-fondo1{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+.container-img-fondo2{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.container-switch{
+    width: 51px;
+    height: 31px;
+    position: relative;
+  }
+  
+  /* Hide default HTML checkbox */
+  .checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  
+  .switch {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: var(--color-switch-left);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+  }
+  
+  /* The slider */
+  .slider {
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    left: calc(50% - 27px/2 + 10px);
+    top: calc(50% - 27px/2);
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+  }
+  
+  .checkbox:checked + .switch {
+    background-color: var(--color-switch-right); 
+  }
+  
+  .checkbox:checked + .switch .slider {
+    left: calc(50% - 27px/2 - 10px);
+    top: calc(50% - 27px/2);
+  }
+  .container-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    h2{
+        color: var(--Light-Grayish-Blue);
+        font-size: 30px;
+    }
+    p{
+        font-size: 15px;
+        color: var(--Light-Grayish-Blue);
+        
+    }
+  }
+  .option{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  /*--------------------------- CARDS--------------------------*/
+  .containerCards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    position: relative;
+  }
+  .card-basic,
+  .card-master,
+  .card-professional{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 600px;
+    background-color: #FFFFFF;
+    gap: 5px;
+}
+.card-professional{
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  
+   .card-title,
+   .card-price{
+    h2,h3{
+        color: #FFFFFF;
+    }
+   }
+   .card-features{
+    .feature{
+        p{
+            color: #FFFFFF;
+        }
+    }
+   }
+   .button-professional{  
+      background:white;
+      color:  hsl(237, 63%, 64%);
+      font-weight: 700;
+      border: 1px solid #FFFFFF;
+   }
+}
+.card-basic{
+  border-bottom-left-radius: 15px;
+  border-top-left-radius:15px ;
+}
+.card-master{
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.card-basic .card-button button,
+.card-master .card-button button {
+  background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+  border: none;
+}
+.card-active{
+  height: 650px;
+  border-radius: 14px;
+}
+.card-title{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    margin-top: 20px;
+    h3{
+        font-size: 20px;
+        color: var(--Dark-Grayish-Blue);
+    }
+}
+.card-price{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    line-height: 0;
+
+    h2{
+        font-size: 100px;
+        font-family:var(--font-principal); ;
+        color: var(--Dark-Grayish-Blue);
+    }
+}
+.card-features{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.feature{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 50px;
+    border-bottom: 1px solid var(--Light-Grayish-Blue);
+    p{
+        font-size: 18px;
+        color: var(--Dark-Grayish-Blue);
+    }
+}
+.feature-top{ 
+    border-top: 1px solid var(--Light-Grayish-Blue);
+}
+.crad-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 330px;
+    height: 50px;
+    margin-top: 35px;
+    border-radius: 8px; 
+    border: 1px solid var(--color-switch-right);
+    font-size: 17px;
+    cursor: pointer;
+}
+.signo {
+  font-size: 50px;
+ position: relative;
+  top: -15px;
+  margin-right: 2px;   
+}
